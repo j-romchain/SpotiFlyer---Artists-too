@@ -120,7 +120,7 @@ class SpotifyProvider(
                         subFolder = ""
                         trackList = listOf(it).toTrackDetailsList(folderType, subFolder)
                         title = it.name.toString()
-                        coverUrl = it.artist?.images?.elementAtOrNull(0)?.url.toString()
+                        coverUrl = it.album?.images?.elementAtOrNull(0)?.url.toString()
                     }
                 }
 
@@ -142,11 +142,13 @@ class SpotifyProvider(
                 }
 
                 "artist" -> {
-                    val artistAlbums = getArtist(link)
-                    for var album in artistAlbums.items {
-                        val albumObject = getAlbum(album)
+                    val artistObject = getArtist(link)
+                    //val tmpAlbums = getAlbum("3FoY3w5K8MCVKQdxvKEtUI");
+                    artistObject.items?.forEach {
+                        val tmpAlbums = artistObject.items?.id
+                        val albumObject = getAlbum(tmpAlbums)
                         folderType = "Artists"
-                        subFolder = albumObject.artist.toString()
+                        subFolder = albumObject.artists.toString()
                         albumObject.tracks?.items?.forEach { it.album = albumObject }
 
                         albumObject.tracks?.items?.toTrackDetailsList(folderType, subFolder).let {
@@ -159,6 +161,7 @@ class SpotifyProvider(
                             }
                         }
                     }
+
                 }
 
                 "playlist" -> {
@@ -218,18 +221,18 @@ class SpotifyProvider(
         TrackDetails(
             title = it.name.toString(),
             trackNumber = it.track_number,
-            genre = it.artist?.genres?.filterNotNull() ?: emptyList(),
+            genre = it.album?.genres?.filterNotNull() ?: emptyList(),
             artists = it.artists?.map { artist -> artist?.name.toString() } ?: listOf(),
-            artistArtists = it.artist?.artists?.mapNotNull { artist -> artist?.name } ?: emptyList(),
+            albumArtists = it.album?.artists?.mapNotNull { artist -> artist?.name } ?: emptyList(),
             durationSec = (it.duration_ms / 1000).toInt(),
-            artistArtPath = fileManager.getImageCachePath(it.artist?.images?.firstOrNull()?.url ?: ""),
-            artistName = it.artist?.name,
-            year = it.artist?.release_date,
-            comment = "Genres:${it.artist?.genres?.joinToString()}",
+            albumArtPath = fileManager.getImageCachePath(it.album?.images?.firstOrNull()?.url ?: ""),
+            albumName = it.album?.name,
+            year = it.album?.release_date,
+            comment = "Genres:${it.album?.genres?.joinToString()}",
             trackUrl = it.href,
             downloaded = it.updateStatusIfPresent(type, subFolder),
             source = Source.Spotify,
-            artistArtURL = it.artist?.images?.firstOrNull()?.url.toString(),
+            albumArtURL = it.album?.images?.firstOrNull()?.url.toString(),
             outputFilePath = fileManager.finalOutputDir(
                 it.name.toString(),
                 type,
