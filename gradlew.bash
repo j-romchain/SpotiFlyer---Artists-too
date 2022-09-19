@@ -22,8 +22,10 @@
 # ##########################################################################
 
 # Set local scope for the variables with windows NT shell
-
-export DIRNAME=%~dp0
+cd "$(dirname $0)" || echo "couldn't get current file directory properly... using fallback method of current working directory" || error 1
+export DIRNAME
+DIRNAME=$(pwd)
+cd - || echo "another error because I couldn't get gradlew's directory" || error 1
 if [[ -z $DIRNAME ]]; then DIRNAME=$(pwd); fi
 export APP_BASE_NAME=$0
 export APP_HOME=$DIRNAME
