@@ -143,25 +143,36 @@ class SpotifyProvider(
 
                 "artist" -> {
                     val artistObject = getArtist(link)
+                    val artistDataObject = getArtistData(link);
                     //val tmpAlbums = getAlbum("3FoY3w5K8MCVKQdxvKEtUI");
-                    artistObject.items?.forEach {
-                        val tmpAlbums = artistObject.items?.id
-                        val albumObject = getAlbum(tmpAlbums)
+                   /* val tempTrackList = mutableListOf<Track>().apply {
+                        // Add Fetched Tracks
+                        val albumObject = getAlbum("3FoY3w5K8MCVKQdxvKEtUI");
+                        albumObject.tracks?.items?.mapNotNull(PlaylistTrack::track)?.let {
+                            addAll(it)
+                            removeAll
+                        }
+                    }
+                    println(tempTrackList)
+                    */artistObject.items?.forEach {
+                        val albumObject = getAlbum(it?.id.toString())
+                        folderType = "Artists"
                         folderType = "Artists"
                         subFolder = albumObject.artists.toString()
                         albumObject.tracks?.items?.forEach { it.album = albumObject }
-
                         albumObject.tracks?.items?.toTrackDetailsList(folderType, subFolder).let {
                             if (it.isNullOrEmpty()) {
                                 // TODO Handle Error
                             } else {
+                                //tempTrackList.addAll(it);
+                                //println(tempTrackList);
                                 trackList = it
-                                title = albumObject.name.toString()
-                                coverUrl = albumObject.images?.elementAtOrNull(0)?.url.toString()
                             }
                         }
                     }
-
+                    title = artistDataObject?.name.toString();
+                    coverUrl = artistDataObject?.images?.elementAtOrNull(0)?.url.toString();
+                    //trackList = tempTrackList.toTrackDetailsList(folderType, subFolder);
                 }
 
                 "playlist" -> {
@@ -188,6 +199,7 @@ class SpotifyProvider(
                     }
 
                     // log("Total Tracks Fetched", tempTrackList.size.toString())
+                    println(tempTrackList);
                     trackList = tempTrackList.toTrackDetailsList(folderType, subFolder)
                     title = playlistObject.name.toString()
                     coverUrl = playlistObject.images?.firstOrNull()?.url.toString()
