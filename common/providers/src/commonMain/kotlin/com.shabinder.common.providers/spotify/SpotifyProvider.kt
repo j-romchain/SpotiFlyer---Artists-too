@@ -166,7 +166,7 @@ class SpotifyProvider(
                             } else {
                                 //tempTrackList.addAll(it);
                                 //println(tempTrackList);
-                                trackList = it
+                                trackList = trackList+it;
                             }
                         }
                     }
