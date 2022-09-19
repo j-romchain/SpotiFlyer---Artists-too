@@ -142,34 +142,30 @@ class SpotifyProvider(
                 }
 
                 "artist" -> {
+                    //get all of the artists albums
                     val artistObject = getArtist(link)
+                    //and his image, etc for later
                     val artistDataObject = getArtistData(link);
-                    //val tmpAlbums = getAlbum("3FoY3w5K8MCVKQdxvKEtUI");
-                   /* val tempTrackList = mutableListOf<Track>().apply {
-                        // Add Fetched Tracks
-                        val albumObject = getAlbum("3FoY3w5K8MCVKQdxvKEtUI");
-                        albumObject.tracks?.items?.mapNotNull(PlaylistTrack::track)?.let {
-                            addAll(it)
-                            removeAll
-                        }
-                    }
-                    println(tempTrackList)
-                    */artistObject.items?.forEach {
+                    //now run some modified code from the album handler /\ in a loop for each album made by the author
+                    artistObject.items?.forEach {
                         val albumObject = getAlbum(it?.id.toString())
                         folderType = "Artists"
-                        folderType = "Artists"
-                        subFolder = albumObject.artists.toString()
+                        subFolder = artistDataObject?.name.toString()
                         albumObject.tracks?.items?.forEach { it.album = albumObject }
                         albumObject.tracks?.items?.toTrackDetailsList(folderType, subFolder).let {
                             if (it.isNullOrEmpty()) {
                                 // TODO Handle Error
                             } else {
+                                //title and cover are artists, not albums
                                 //tempTrackList.addAll(it);
                                 //println(tempTrackList);
+                                //and the track list needs to be added up, not just the last album
+                                //(might cause problems with previous runs residual tracks, depends on the rest of the code.)
                                 trackList = trackList+it;
                             }
                         }
                     }
+                    //and set the title and image from the author data above
                     title = artistDataObject?.name.toString();
                     coverUrl = artistDataObject?.images?.elementAtOrNull(0)?.url.toString();
                     //trackList = tempTrackList.toTrackDetailsList(folderType, subFolder);
@@ -199,7 +195,6 @@ class SpotifyProvider(
                     }
 
                     // log("Total Tracks Fetched", tempTrackList.size.toString())
-                    println(tempTrackList);
                     trackList = tempTrackList.toTrackDetailsList(folderType, subFolder)
                     title = playlistObject.name.toString()
                     coverUrl = playlistObject.images?.firstOrNull()?.url.toString()

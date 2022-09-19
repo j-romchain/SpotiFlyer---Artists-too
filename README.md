@@ -8,7 +8,7 @@
 # SpotiFlyer
 - **Kotlin Multiplatform** Music Downloader ,supports **Spotify, Youtube, Gaana, Jio-Saavn and SoundCloud**.
 
-Supports- Playlist, Albums, Tracks. _(If You know Any Source for Episodes/Podcasts create an Issue sharing It.)_
+Supports- Playlist, Albums, Artists(currently only on spotify), Tracks. _(If You know Any Source for Episodes/Podcasts create an Issue sharing It.)_
 
  **Currently running on:**
  - [Android (Jetpack Compose)](https://github.com/Shabinder/SpotiFlyer#-install) 
@@ -26,7 +26,7 @@ Supports- Playlist, Albums, Tracks. _(If You know Any Source for Episodes/Podcas
 ***Encourage this repo by giving it a Star⭐ .***
 
 SpotiFlyer is an **App**(Written in **Kotlin**), which **aims** to work as:
-  - **Downloads**: Albums, Tracks and Playlists,etc 
+  - **Downloads**: Albums, Artists(currently only on spotify), Tracks and Playlists,etc 
   - **Save your Data** ,by not **_Streaming_** your Fav Songs Online again & again(Just Download Them!)
   - **No ADS!** 
   - **Works straight out of the box** and does not require you to generate or mess with your API keys (already included).
@@ -74,6 +74,7 @@ Want to contribute? Great!
 All contributions are welcome, from code to documentation to graphics to design suggestions to bug reports. Please use GitHub to its fullest-- contribute Pull Requests, contribute tutorials or other wiki content-- whatever you have to offer, we can use it!
 
  - For **Translations** , read [Contributing.md](https://github.com/Shabinder/SpotiFlyer/blob/main/CONTRIBUTING.md)
+ - For **Builing for other tests**, use the commands in .github/workflows/build-release-binaries.yml and gradlew.bat/.bash (windows/linux)
 
 **Please Donate to support me and my work!**
 </br>
