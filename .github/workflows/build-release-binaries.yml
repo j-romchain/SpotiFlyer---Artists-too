@@ -28,14 +28,14 @@ jobs:
         run: ./gradlew :desktop:packageDeb
 
       # Create a Draft Release
-#      - name: Draft Release
-#        uses: ncipollo/release-action@v1
-#        with:
-#          draft: true
-#          allowUpdates: true
-#          tag: "v3.6.1"
-#          artifacts: "desktop/build/compose/jars/*.jar,desktop/build/compose/binaries/main/*/*"
-#          token: ${{ secrets.GH_TOKEN }}
+      - name: Draft Release
+        uses: ncipollo/release-action@v1
+        with:
+          draft: true
+          allowUpdates: true
+          tag: "v3.6.1"
+          artifacts: "desktop/build/compose/jars/*.jar,desktop/build/compose/binaries/main/*/*"
+          token: ${{ secrets.GH_TOKEN }}
 
 
   # Windows Package
@@ -78,15 +78,14 @@ jobs:
 #          keyPassword: ${{ secrets.KEY_PASSWORD }}
 
       # Create a Draft Release
-#      - name: Draft Release
-#        uses: ncipollo/release-action@v1
-#        with:
-#          draft: true
-#          allowUpdates: true
-#          tag: "v3.6.1"
-#          artifacts: "desktop/build/compose/jars/*.jar,desktop/build/compose/binaries/main/*/*,android/build/outputs/apk/release/*signed.apk"
-#          token: ${{ secrets.GH_TOKEN }}
-
+      - name: Draft Release
+        uses: ncipollo/release-action@v1
+        with:
+          draft: true
+          allowUpdates: true
+          tag: "v3.6.1"
+          artifacts: "desktop/build/compose/jars/*.jar,desktop/build/compose/binaries/main/*/*,android/build/outputs/apk/release/*signed.apk"
+          token: ${{ secrets.GH_TOKEN }}
 
   create-mac-package:
     runs-on: macos-latest
@@ -112,11 +111,11 @@ jobs:
         run: ./gradlew :desktop:packageDmg
 
       # Create a Draft Release
-#      - name: Draft Release
-#        uses: ncipollo/release-action@v1
-#        with:
-#          draft: true
-#          allowUpdates: true
-#          tag: "v3.6.1"
-#          artifacts: "desktop/build/compose/jars/*.jar,desktop/build/compose/binaries/main/*/*"
-#          token: ${{ secrets.GH_TOKEN }}
+      - name: Draft Release
+        uses: ncipollo/release-action@v1
+        with:
+          draft: true
+          allowUpdates: true
+          tag: "v3.6.1"
+          artifacts: "desktop/build/compose/jars/*.jar,desktop/build/compose/binaries/main/*/*"
+          token: ${{ secrets.GH_TOKEN }}
