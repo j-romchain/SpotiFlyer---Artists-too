@@ -35,7 +35,7 @@ jobs:
           allowUpdates: true
           tag: "v3.6.1"
           artifacts: "desktop/build/compose/jars/*.jar,desktop/build/compose/binaries/main/*/*"
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ github.token }}
 
 
   # Windows Package
@@ -84,8 +84,8 @@ jobs:
           draft: true
           allowUpdates: true
           tag: "v3.6.1"
-          artifacts: "desktop/build/compose/jars/*.jar,desktop/build/compose/binaries/main/*/*,android/build/outputs/apk/release/*signed.apk"
-          token: ${{ secrets.GH_TOKEN }}
+          artifacts: "desktop/build/compose/jars/*.jar,desktop/build/compose/binaries/main/*/*,android/build/outputs/apk/release/*.apk"
+          token: ${{ github.token }}
 
   create-mac-package:
     runs-on: macos-latest
@@ -118,4 +118,4 @@ jobs:
           allowUpdates: true
           tag: "v3.6.1"
           artifacts: "desktop/build/compose/jars/*.jar,desktop/build/compose/binaries/main/*/*"
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ github.token }}
