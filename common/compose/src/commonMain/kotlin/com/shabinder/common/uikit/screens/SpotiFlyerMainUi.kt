@@ -349,7 +349,7 @@ fun AboutColumn(
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
                         modifier = Modifier.fillMaxWidth().clickable(
-                            onClick = { Actions.instance.openPlatform("", "https://github.com/Shabinder/SpotiFlyer") }
+                            onClick = { Actions.instance.openPlatform("", "https://github.com/j-romchain/SpotiFlyer---Artists-too") }
                         )
                             .padding(vertical = 6.dp)
                     ) {
@@ -368,7 +368,7 @@ fun AboutColumn(
                     }
                     Row(
                         modifier = modifier.fillMaxWidth().padding(vertical = 6.dp)
-                            .clickable(onClick = { Actions.instance.openPlatform("", "https://github.com/Shabinder/SpotiFlyer/blob/main/CONTRIBUTING.md") }),
+                            .clickable(onClick = { Actions.instance.openPlatform("", "https://github.com/j-romchain/SpotiFlyer---Artists-too/blob/main/CONTRIBUTING.md") }),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Icon(Icons.Rounded.Flag, Strings.help() + Strings.translate(), Modifier.size(32.dp))

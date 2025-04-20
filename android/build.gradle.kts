@@ -71,7 +71,7 @@ android {
         }
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "21"
     }
     compileOptions {
         // Flag to enable support for the new language APIs

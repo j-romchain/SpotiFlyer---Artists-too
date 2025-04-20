@@ -4,7 +4,7 @@
  
  - Create **`Strings_{language-code}.properties.xml`**  in  **`/translations/`**
    
-   - Refer to the **Default file** - *English **(en)*** => [`Strings_en.properties`](https://github.com/Shabinder/SpotiFlyer/blob/main/translations/Strings_en.properties)
+   - Refer to the **Default file** - *English **(en)*** => [`Strings_en.properties`](https://github.com/j-romchain/SpotiFlyer---Artists-too/blob/main/translations/Strings_en.properties)
    
        - For example, if you want to translate the app to **French** , create **`Strings_fr.properties`**
    

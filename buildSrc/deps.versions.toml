@@ -1,25 +1,25 @@
 [versions]
-kotlin = "1.6.10"
-androidCoroutines = "1.5.1"
-ktLint = "10.1.0"
-mosaic = "0.1.0"
-koin = "3.1.2"
-kermit = "0.1.9"
-mokoParcelize = "0.7.1"
-ktor = "1.6.7"
-kotlinxSerialization = "1.3.1"
-sqlDelight = "1.5.3"
-sqliteJdbcDriver = "3.34.0"
-slf4j = "1.7.31"
-i18n4k = "0.1.3"
-essenty = "0.2.2"
-multiplatformSettings = "0.7.7"
-decompose = "0.5.0"
-mviKotlin = "3.0.0-alpha03"
-accompanist = "0.22.0-rc"
-statelyVersion = "1.2.1"
-statelyIsoVersion = "1.2.1"
-androidxLifecycle = "2.4.0-alpha03"
+kotlin = "1.9.23"
+androidCoroutines = "1.8.0"
+ktLint = "12.2.0"
+mosaic = "0.4.0"
+koin = "3.6.1"
+kermit = "2.0.4"
+mokoParcelize = "0.9.0"
+ktor = "2.3.10"
+kotlinxSerialization = "1.6.3"
+sqlDelight = "2.0.2"
+sqliteJdbcDriver = "3.46.0"
+slf4j = "2.0.13"
+i18n4k = "0.10.0"
+essenty = "1.2.3"
+multiplatformSettings = "1.1.1"
+decompose = "3.3.0"
+mviKotlin = "4.3.0"
+accompanist = "0.37.2"
+statelyVersion = "2.1.0"
+statelyIsoVersion = "2.1.0"
+androidxLifecycle = "2.8.7"
 
 
 [libraries]
@@ -89,12 +89,12 @@ stately-concurrency = { group = "co.touchlab", name = "stately-concurrency", ver
 stately-isolate = { group = "co.touchlab", name = "stately-isolate", version.ref = "statelyIsoVersion" }
 stately-iso-collections = { group = "co.touchlab", name = "stately-iso-collections", version.ref = "statelyIsoVersion" }
 
-sqldelight-runtime = { group = "com.squareup.sqldelight", name = "runtime", version.ref = "sqlDelight" }
-sqldelight-coroutines-extension = { group = "com.squareup.sqldelight", name = "coroutines-extensions", version.ref = "sqlDelight" }
-sqldelight-gradle-plugin = { group = "com.squareup.sqldelight", name = "gradle-plugin", version.ref = "sqlDelight" }
-sqldelight-driver = { group = "com.squareup.sqldelight", name = "sqlite-driver", version.ref = "sqlDelight" }
-sqldelight-android-driver = { group = "com.squareup.sqldelight", name = "android-driver", version.ref = "sqlDelight" }
-sqldelight-native-driver = { group = "com.squareup.sqldelight", name = "native-driver", version.ref = "sqlDelight" }
+sqldelight-runtime = { group = "app.cash.sqldelight", name = "runtime", version.ref = "sqlDelight" }
+sqldelight-coroutines-extension = { group = "app.cash.sqldelight", name = "coroutines-extensions", version.ref = "sqlDelight" }
+sqldelight-gradle-plugin = { group = "app.cash.sqldelight", name = "gradle-plugin", version.ref = "sqlDelight" }
+sqldelight-driver = { group = "app.cash.sqldelight", name = "sqlite-driver", version.ref = "sqlDelight" }
+sqldelight-android-driver = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sqlDelight" }
+sqldelight-native-driver = { group = "app.cash.sqldelight", name = "native-driver", version.ref = "sqlDelight" }
 sqlite-jdbc-driver = { group = "org.xerial", name = "sqlite-jdbc", version.ref = "sqliteJdbcDriver" }
 
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
@@ -114,12 +114,12 @@ androidx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-corouti
 androidx-junit = { group = "androidx.test.ext", name = "junit", version = "1.1.2" }
 androidx-expresso = { group = "androidx.test.espresso", name = "espresso-core", version = "3.3.0" }
 androidx-r8 = { group = "com.android.tools", name = "r8", version = "3.3.28" }
-androidx-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version = "4.2.2" }
+androidx-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version = "8.9.0" }
 androidx-lifecycle-service = { group = "androidx.lifecycle", name = "lifecycle-service", version.ref = "androidxLifecycle" }
 androidx-lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "androidxLifecycle" }
 androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }
 androidx-desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version = "1.1.5" }
-leak-canary = { group = "com.squareup.leakcanary", name = "leakcanary-android", version = "2.7" }
+leak-canary = { group = "app.cash.leakcanary", name = "leakcanary-android", version = "2.7" }
 junit = { group = "junit", name = "junit", version = "4.13.2" }
 
 ktlint-gradle = { group = "org.jlleitschuh.gradle", name = "ktlint-gradle", version.ref = "ktLint" }

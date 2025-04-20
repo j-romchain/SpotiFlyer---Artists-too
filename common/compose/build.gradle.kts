@@ -25,7 +25,7 @@ kotlin {
     sourceSets {
         all {
             languageSettings.apply {
-                useExperimentalAnnotation("androidx.compose.animation")
+                optIn("androidx.compose.animation")
             }
         }
         commonMain {

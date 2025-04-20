@@ -26,14 +26,14 @@ import org.gradle.kotlin.dsl.getByType
 
 object Versions {
     // App's Version (To be bumped at each update)
-    const val versionName = "3.6.3"
+    const val versionName = "3.9.0"
 
-    const val versionCode = 31
+    const val versionCode = 34
 
     // Android
     const val minSdkVersion = 21
-    const val compileSdkVersion = 31
-    const val targetSdkVersion = 29
+    const val compileSdkVersion = 36
+    const val targetSdkVersion = 34
 }
 
 object HostOS {
@@ -46,7 +46,7 @@ object HostOS {
 
 val Project.Deps: VersionCatalog get() = project.extensions.getByType<VersionCatalogsExtension>().named("deps")
 
-val VersionCatalog.ktorBundle get() = findBundle("ktor").get()
+val VersionCatalog.ktorBundle get() =  findBundle("ktor").get()
 val VersionCatalog.statelyBundle get() = findBundle("stately").get()
 val VersionCatalog.androidXLifecycleBundle get() = findBundle("androidx-lifecycle").get()
 val VersionCatalog.androidXCommonBundle get() = findBundle("androidx-common").get()
