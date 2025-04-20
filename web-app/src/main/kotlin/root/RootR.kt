@@ -16,7 +16,7 @@
 
 package root
 
-import com.arkivanov.decompose.RouterState
+import com.arkivanov.decompose.router.RouterState
 import com.shabinder.common.root.SpotiFlyerRoot
 import com.shabinder.common.root.SpotiFlyerRoot.Child
 import extras.Props
@@ -45,10 +45,8 @@ class RootR(props: Props<SpotiFlyerRoot>) : RenderableComponent<SpotiFlyerRoot, 
             isBackVisible = (child is Child.List)
             popBackToHomeScreen = callBacks::popBackToHomeScreen
         }
-        when(child){
-            is Child.Main -> renderableChild(HomeScreen::class, (child as Child.Main).component)
-            is Child.List -> renderableChild(ListScreen::class, (child as Child.List).component)
-        }
+        if (child is Child.Main) renderableChild(HomeScreen::class, (child as Child.Main).component)
+        else if (child is Child.List) renderableChild(ListScreen::class, (child as Child.List).component)
     }
 }
 

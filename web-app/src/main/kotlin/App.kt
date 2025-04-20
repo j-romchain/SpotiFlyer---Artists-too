@@ -62,7 +62,7 @@ class App(props: AppProps) : RComponent<AppProps, State>(props) {
 
     private val root = SpotiFlyerRoot(ctx,
         object : SpotiFlyerRoot.Dependencies {
-            override val storeFactory: StoreFactory = LoggingStoreFactory(DefaultStoreFactory)
+            override val storeFactory: StoreFactory = LoggingStoreFactory(DefaultStoreFactory())
             override val fetchQuery = dependencies.fetchPlatformQueryResult
             override val fileManager = dependencies.fileManager
             override val analyticsManager = dependencies.analyticsManager
