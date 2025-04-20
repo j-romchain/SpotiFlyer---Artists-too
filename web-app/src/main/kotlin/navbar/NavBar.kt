@@ -144,7 +144,7 @@ private val navBar = functionComponent<NavBarProps>("NavBar") { props ->
                 }
             }*/
 
-            styledA(href = "https://github.com/Shabinder/SpotiFlyer/") {
+            styledA(href = "https://github.com/j-romchain/SpotiFlyer---Artists-too/") {
                 styledImg(src = "github.svg") {
                     css {
                         height = 42.px

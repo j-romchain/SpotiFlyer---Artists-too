@@ -43,7 +43,7 @@ internal suspend fun updateDownloadCards(
 
     return getUpdatedContent(
         oldContent,
-        """<a href="https://github.com/Shabinder/SpotiFlyer/releases/latest"><img src="${getDownloadCard(totalDownloads)}" height="125" width="280" alt="Total Downloads"></a>""",
+        """<a href="https://github.com/j-romchain/SpotiFlyer---Artists-too/releases/latest"><img src="${getDownloadCard(totalDownloads)}" height="125" width="280" alt="Total Downloads"></a>""",
         secrets.tagName
     )
 }

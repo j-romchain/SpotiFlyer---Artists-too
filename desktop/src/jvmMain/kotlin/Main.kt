@@ -159,7 +159,7 @@ private fun spotiFlyerRoot(componentContext: ComponentContext): SpotiFlyerRoot =
                     openLink("https://razorpay.com/payment-button/pl_GnKuuDBdBu0ank/view/?utm_source=payment_button&utm_medium=button&utm_campaign=payment_button")
                 }
 
-                override fun shareApp() = openLink("https://github.com/Shabinder/SpotiFlyer")
+                override fun shareApp() = openLink("https://github.com/j-romchain/SpotiFlyer---Artists-too")
                 override fun copyToClipboard(text: String) {
                     val data = StringSelection(text)
                     val cb: Clipboard = Toolkit.getDefaultToolkit().systemClipboard

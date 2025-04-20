@@ -95,8 +95,8 @@ private val platformIconList = mapOf(
     //"youtube_music.svg" to "https://music.youtube.com/"
 )
 private val badges = mapOf(
-    "https://img.shields.io/github/v/release/Shabinder/SpotiFlyer?color=7885FF&label=SpotiFlyer&logo=android&style=for-the-badge"
-            to "https://github.com/Shabinder/SpotiFlyer/releases/latest/",
-    "https://img.shields.io/github/downloads/Shabinder/SpotiFlyer/total?style=for-the-badge&logo=android&color=17B2E7"
-            to "https://github.com/Shabinder/SpotiFlyer/releases/latest/"
+    "https://img.shields.io/github/v/release/j-romchain/SpotiFlyer---Artists-too?color=7885FF&label=SpotiFlyer&logo=android&style=for-the-badge"
+            to "https://github.com/j-romchain/SpotiFlyer---Artists-too/releases/latest/",
+    "https://img.shields.io/github/downloads/j-romchain/SpotiFlyer---Artists-too/total?style=for-the-badge&logo=android&color=17B2E7"
+            to "https://github.com/j-romchain/SpotiFlyer---Artists-too/releases/latest/"
 )
