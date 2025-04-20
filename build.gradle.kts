@@ -40,7 +40,7 @@ allprojects {
         dependsOn(":common:data-models:generateI18n4kFiles")
         kotlinOptions {
             if (this is org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions) {
-                jvmTarget = "1.8"
+                jvmTarget = "21"
             }
             freeCompilerArgs = (freeCompilerArgs + listOf("-Xopt-in=kotlin.RequiresOptIn"))
         }
@@ -60,8 +60,8 @@ allprojects {
             ?.let { kmpExt ->
                 kmpExt.sourceSets.run {
                     all {
-                        languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
-                        languageSettings.useExperimentalAnnotation("kotlinx.serialization.ExperimentalSerializationApi")
+                        languageSettings.optIn("kotlin.RequiresOptIn")
+                        languageSettings.optIn("kotlinx.serialization.ExperimentalSerializationApi")
                     }
                     removeAll { it.name == "androidAndroidTestRelease" }
                 }

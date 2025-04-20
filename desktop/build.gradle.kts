@@ -29,7 +29,7 @@ version = Versions.versionName
 kotlin {
     jvm {
         compilations.all {
-            kotlinOptions.jvmTarget = "1.8"
+            kotlinOptions.jvmTarget = "21"
         }
     }
     tasks.named<Copy>("jvmProcessResources") {

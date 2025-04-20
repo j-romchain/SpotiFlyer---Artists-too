@@ -41,8 +41,8 @@ kotlin {
             languageSettings.apply {
                 progressiveMode = true
                 enableLanguageFeature("NewInference")
-                useExperimentalAnnotation("kotlin.Experimental")
-                useExperimentalAnnotation("kotlin.time.ExperimentalTime")
+                optIn("kotlin.Experimental")
+                optIn("kotlin.time.ExperimentalTime")
             }
         }
         commonMain {
