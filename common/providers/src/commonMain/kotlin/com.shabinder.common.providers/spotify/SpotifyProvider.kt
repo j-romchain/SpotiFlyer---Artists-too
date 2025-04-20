@@ -146,31 +146,8 @@ class SpotifyProvider(
                     val artistObject = getArtist(link)
                     //and his image, etc for later
                     val artistDataObject = getArtistData(link);
-                    var albumsList = artistObject.items;
-                    // Check For More Albums using code from the playlist handler \/
-                    var moreAlbumsAvailable = !artistObject.next.isNullOrBlank()
-                    while (moreAlbumsAvailable) {
-                        // Fetch Remaining Tracks
-                        val moreAlbums =
-                            getArtist(link, offset = albumsList?.size!!.toInt());
-                        //moreAlbums.items?.forEach() {
-                        //    albumsList = albumsList + it;
-                        //}
-                        //albumsList = albumsList+moreAlbums.items;
-                        albumsList = albumsList!!.plus(ArrayList(moreAlbums?.items));
-                        //println(moreAlbums);
-                        //println("hilow")
-                        //albumsList.addAll(moreAlbums?.items);
-                        //var list: MutableList = ArrayList(albumsList)
-                        //list?.addAll(albumsList);
-                        //list?.addAll(moreAlbums?.items);
-                        //albumsList=list;
-                        //println(albumsList!!.plus(moreAlbums?.items));
-                        moreAlbumsAvailable = !moreAlbums.next.isNullOrBlank()
-                        //println(albumsList?.size);
-                    }
                     //now run some modified code from the album handler /\ in a loop for each album made by the author
-                    albumsList?.forEach {
+                    artistObject.items?.forEach {
                         val albumObject = getAlbum(it?.id.toString())
                         folderType = "Artists"
                         subFolder = artistDataObject?.name.toString()
